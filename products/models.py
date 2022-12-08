@@ -16,9 +16,9 @@ class AddProduct(models.Model):
     order_limit = models.IntegerField(_("Order Limit") , default=0)
     sell_price = models.FloatField(_("Sell Price") , default=0)
     date_add = models.DateTimeField(_("Date Add") , null=True , blank=True)
-    image = models.ImageField(_("Product Image") , upload_to='products/')
+    image = models.ImageField(_("Product Image") , upload_to='products/' , null=True , blank=True)
     quantity = models.IntegerField(_("Quantity") , default=0)
-    notes = models.CharField(_("Notes") , max_length=100)
+    notes = models.CharField(_("Notes") , max_length=100 )
     
     
     

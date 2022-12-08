@@ -1,0 +1,9 @@
+<a href="{% url 'products:new_product' %} "> New Product </a>
+{% for product in product  %}
+
+  
+
+    <p><a href={% url 'products:product_detail' product.id %}> {{product.notes}} </a></P>
+
+{% endfor %}
+

@@ -1,0 +1,10 @@
+
+    
+{% for pro in product_detail %}
+    <a href="{% url 'products:edit_product' pro.id %}">Edit Product<a/>
+    <a href="{% url 'products:delete_product' pro.id %}" > Delete Product</a>   
+    {{pro}}
+    <p>     <p><a href={% url 'products:product_detail' pro.id %}> {{pro.notes}} </a></P>
+        {{pro.quantity}}</P>
+    {{pro.sell_price}}
+{% endfor %}

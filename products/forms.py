@@ -1,5 +1,5 @@
 from django import forms
-from .models import AddProduct
+from .models import AddProduct , Category
 
 
 
@@ -9,4 +9,11 @@ class ProductForm(forms.ModelForm):
        fields = '__all__'
        exclude = ('date_add',)
     
-    
+
+
+class CategoryForm(forms.ModelForm):
+    class Meta:
+        model = Category    
+        fields = '__all__'
+        
+        

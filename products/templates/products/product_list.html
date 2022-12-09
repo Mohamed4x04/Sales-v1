@@ -1,9 +1,15 @@
-<a href="{% url 'products:new_product' %} "> New Product </a>
-{% for product in product  %}
+{% comment %} <a href="{% url 'products:new_product' %} "> New Product </a>
+<p><a href={% url 'products:product_detail' product.id %}> {{product.notes}} </a></P>
+
+{% comment %} {% for product in product  %}
 
   
 
-    <p><a href={% url 'products:product_detail' product.id %}> {{product.notes}} </a></P>
+
+{% endfor %} {% endcomment %}
+
+
+{% for object in product %}
+    <p><a href="{% url 'products:product_detail' object.id  %} "> {{object}} </a>  </p>
 
 {% endfor %}
-

@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import AddProduct 
-from .forms import ProductForm
+from .models import AddProduct , Category , Brand, Storage
+from .forms import ProductForm , CategoryForm
 from django.shortcuts import redirect
 
 # Create your views here.
@@ -31,13 +31,12 @@ def new_product(request):
             form.save()
     else:
         form = ProductForm()
-                
-        
+            
     return render (request, 'products/new_product.html' , {'form':form})
 
 
 def edit_product(request,id):
-    product = AddProduct.objects.get(id=id)
+    product = AddProduct.objects.filter(id=id)
     if request.method == 'POST':
         form = ProductForm(request.POST,request.FILES,instance=product)
         if form.is_valid():
@@ -61,13 +60,39 @@ def delete_product(request,id):
     
           
     
+def category_list(request):
+    category_list = Category.objects.all()
+    return render(request, 'products/category_list.html', {'category_list':category_list})  
+    
+
+
+
+def category_detail(request,id):
+    category_detail = Category.objects.get(id=id)     
+    return render(request, 'products/category_detail.html' ,{'category_detail':category_detail})
+
+            
+        
     
     
     
+def brand_list(request):
+    brand_list = Brand.objects.all()
+    return render(request, 'products/brand_list.html', {'brand_list':brand_list})
     
     
-    
-    
+
+
+def brand_detail(request,id):
+    brand_detail = Brand.objects.get(id=id)
+    return render(request, 'products/brand_detail.html', {'brand_detail':brand_detail})    
+
+
+
+
+def storage_list(request):
+    storage_list = Storage.objects.all()
+    return render(request, 'products/storage_list.html', {'storage_list':storage_list})
     
     
     

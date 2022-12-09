@@ -1,0 +1,5 @@
+{% for object in storage_list %}
+
+    <p><a href="{% url 'products:category_list' %}">{{object}}</a></p>
+
+{% endfor %}

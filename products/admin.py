@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import AddProduct , Category , Storage , AddQuantity , ParcodePrint , ProductImage
+from .models import AddProduct , Category , Brand , Storage , AddQuantity , ParcodePrint , ProductImage 
 # Register your models here.
 
 
@@ -21,3 +21,4 @@ admin.site.register(Storage)
 admin.site.register(AddQuantity)
 admin.site.register(ParcodePrint)
 admin.site.register(ProductImage)
+admin.site.register(Brand)

@@ -1,5 +1,5 @@
 from django import forms
-from .models import AddProduct , Category
+from .models import AddProduct , Category , Storage
 
 
 
@@ -17,3 +17,8 @@ class CategoryForm(forms.ModelForm):
         fields = '__all__'
         
         
+        
+class StorageForm(forms.ModelForm):
+    class Meta:
+        model= Storage
+        fields= '__all__'        

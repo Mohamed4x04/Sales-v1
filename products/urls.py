@@ -11,10 +11,10 @@ urlpatterns = [
     path('<int:id>/delete' ,delete_product , name='delete_product' ),
     
     path('category/' , category_list , name='category_list'),
-    path('<int:id>' ,category_detail, name='category_detail'),
+    path('<int:id>/edit_category' ,category_detail, name='category_detail'),
     
     path('brand/', brand_list, name='brand_list'),
-    path('<int:id>', brand_detail, name='brand_detail'),
+    path('<int:id>/edit_brand', brand_detail, name='brand_detail'),
     
     path('storage/', storage_list, name='storage_list')
     
